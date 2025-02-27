@@ -46,7 +46,8 @@ def get_nvcc_compiler() -> Tuple[str, str]:
     paths = []
     if os.getenv('DG_NVCC_COMPILER'):
         paths.append(os.getenv('DG_NVCC_COMPILER'))
-    paths.append(f'{CUDA_HOME}/bin/nvcc')
+    # NVCC = /usr/local/cuda/bin/nvcc
+    paths.append(f'/usr/local/cuda/bin/nvcc')
 
     # Try to find the first available NVCC compiler
     least_version_required = '12.3'

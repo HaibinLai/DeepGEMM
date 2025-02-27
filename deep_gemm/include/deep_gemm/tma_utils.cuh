@@ -77,6 +77,10 @@ CUtensorMap make_2d_tma_copy_desc(T* global_address, uint64_t gmem_dim[2],
             CUtensorMapInterleave::CU_TENSOR_MAP_INTERLEAVE_NONE, swizzle_type,
             CUtensorMapL2promotion::CU_TENSOR_MAP_L2_PROMOTION_L2_256B,
             CUtensorMapFloatOOBfill::CU_TENSOR_MAP_FLOAT_OOB_FILL_NONE);
+
+    // todo: encode_func result: 801
+    // cuda runtime error (801) : operation not supported
+    // std::cout << "encode_func result: " << result << std::endl;
     DG_HOST_ASSERT(result == CUDA_SUCCESS);
     return tensor_map;
 }

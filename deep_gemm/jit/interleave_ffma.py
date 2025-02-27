@@ -7,8 +7,9 @@ from torch.utils.cpp_extension import CUDA_HOME
 
 
 def run_cuobjdump(file_path):
-    command = [f'{CUDA_HOME}/bin/cuobjdump', '-sass', file_path]
+    command = [f'/usr/local/cuda/bin/cuobjdump', '-sass', file_path]
     result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    print(result.stderr)
     assert result.returncode == 0
     return result.stdout
 
